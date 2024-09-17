@@ -1,4 +1,3 @@
-## pipeline with multiple stages
 pipeline {
     agent any
 
@@ -27,5 +26,11 @@ pipeline {
                 archiveArtifacts artifacts: 'api-gateway/target/*.jar', followSymlinks: false
             }
         }
+       stage('print') {
+            steps {
+                sh "echo testing"
+            }
+        }
+            
     }
 }
